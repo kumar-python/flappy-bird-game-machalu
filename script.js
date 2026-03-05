@@ -171,7 +171,7 @@ document.addEventListener("keydown", () => {
     }
 });
 
-document.addEventListener("click", () => {
+document.addEventListener("touchstart", () => {
     if (!gameOver) {
         bird.velocity = bird.lift;
     } else {
@@ -182,3 +182,4 @@ document.addEventListener("click", () => {
 
 
 gameLoop();
+
