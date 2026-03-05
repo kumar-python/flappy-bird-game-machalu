@@ -141,10 +141,12 @@ function gameLoop() {
         drawScore();
 
         ctx.font = "30px Arial";
-        ctx.fillText("MACHALU! RESTART ", 90, 350);
+        ctx.textAlign = "center";
+        ctx.fillText("MACHALU! RESTART ", canvas.width/2, 100);
 
         ctx.font = "20px Arial";
-        ctx.fillText("Tap anywhere to play again ", 90, 300);
+        ctx.textAlign = "center";
+        ctx.fillText("Tap anywhere to play again ",canvas.width/2, 120);
 
     }
 
@@ -182,5 +184,6 @@ document.addEventListener("touchstart", () => {
 
 
 gameLoop();
+
 
 
