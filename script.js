@@ -86,10 +86,7 @@ function drawPipes() {
     ctx.fillStyle = "green";
 
     pipes.forEach(pipe => {
-    // Top pipe
     ctx.drawImage(pipeImg, pipe.x, 0, pipe.width, pipe.top);
-
-    // Bottom pipe
     ctx.drawImage(pipeImg, pipe.x, canvas.height - pipe.bottom, pipe.width, pipe.bottom);
 
         pipe.x -= 2;
@@ -114,7 +111,9 @@ function drawPipes() {
 
 function drawScore() {
     ctx.fillStyle = "black";
-    ctx.font = "20px Arial";
+    ctx.font = "50px Arial";
+    ctx.textAlign = "center";
+    ctx.fillText(score, canvas.width/2, 80);
     
 }
 
@@ -143,10 +142,6 @@ function gameLoop() {
 
         ctx.font = "30px Arial";
         ctx.fillText("MACHALU! RESTART ", 90, 350);
-
-        ctx.fillStyle = "black";
-        ctx.font = "30px Arial";
-        ctx.fillText("Score: " + score, 100, 250);
 
         ctx.font = "20px Arial";
         ctx.fillText("Tap anywhere to play again ", 90, 300);
@@ -183,6 +178,7 @@ document.addEventListener("click", () => {
         resetGame();
     }
 });
+
 
 
 gameLoop();
